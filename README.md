@@ -43,3 +43,16 @@ used by him:
 - [Simple.css](https://simplecss.org/)
 - [Water.css](https://watercss.kognise.dev/)
 - [Bolt.css](https://boltcss.com/)
+
+## Personal Knowledge Base (PKB)
+
+### Get current location using JS Vanilla
+
+If you want to get the current path to use it somewhere using JS you could do so
+using `window.location.pathname` like in the following example:
+
+```js
+console.log(window.location.pathname)
+
+/* http://localhost:5173/about -> /about */
+```
