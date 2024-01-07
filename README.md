@@ -30,3 +30,16 @@ React.
   with routes
 - Testing
 - Publish the package on NPM
+
+## Midudev's Technical Test Tips
+
+### Use of classless CSS Frameworks
+
+As always, Midudev suggested to use classless CSS Frameworks in order to add
+some base styles to improve the appearance of the page. In this project he
+suggested the first one, but there are other 2 frameworks that are often been
+used by him:
+
+- [Simple.css](https://simplecss.org/)
+- [Water.css](https://watercss.kognise.dev/)
+- [Bolt.css](https://boltcss.com/)
