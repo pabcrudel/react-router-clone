@@ -56,3 +56,23 @@ console.log(window.location.pathname)
 
 /* http://localhost:5173/about -> /about */
 ```
+
+### Access history to modify an URL without refreshing
+
+Global object `window` has the object `history`. It allows you to modify the URL
+without refreshing the page using `pushState`. This functions allows 3 params:
+
+- `{} -> State`: Gives information to the new history entry. Some browser
+  doesn't manage it well.
+
+- `'' -> Title`: Setts the title of the new en history entry but some browsers
+  ignore it.
+
+- `href -> url`: Defines the URL as a string to the new history entry. Is
+  important that this URL has the same origin for security purposes.
+
+```js
+function navigate (href) {
+  window.history.pushState({}, '', href);
+}
+```
