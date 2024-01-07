@@ -76,3 +76,32 @@ function navigate (href) {
   window.history.pushState({}, '', href);
 }
 ```
+
+### Create and dispatch a custom event
+
+In JS is possible to create a custom event using the `Event` object. It can be
+created like an object in `Java` and needs a name given as a parameter.
+
+```js
+const event = new Event('myEvent');
+```
+
+To
+[dispatch](https://www.wordreference.com/es/translation.asp?tranword=dispatch)
+this event in order to perform an action, the global objet `window` has a
+function called `dispatchEvent`.
+
+```js
+window.dispatchEvent(new Event('myEvent'));
+```
+
+For example, this could be used with the `navigate` function to create an event
+listener that perform an action when the navigation happens.
+
+```js
+function navigate (href) {
+  window.history.pushState({}, '', href);
+
+  window.dispatchEvent(new Event('pushState'));
+}
+```
