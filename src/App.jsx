@@ -1,3 +1,5 @@
+import Footer from './components/Footer';
+
 export default function App () {
   return (
     <>
@@ -8,6 +10,8 @@ export default function App () {
       <main>
         <p>A React library that enables <strong>client side routing</strong></p>
       </main>
+
+      <Footer repositoryName='react-router-clone'/>
     </>
   );
 }
