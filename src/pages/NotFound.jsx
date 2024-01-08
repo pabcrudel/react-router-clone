@@ -1,3 +1,5 @@
+import Link from '../components/Link';
+
 export default function NotFoundPage () {
   return (
     <>
@@ -7,6 +9,8 @@ export default function NotFoundPage () {
 
       <main>
         <p>There&apos;s nothing here</p>
+
+        <Link to="/">Go to home page</Link>
       </main>
     </>
   );

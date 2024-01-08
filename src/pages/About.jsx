@@ -1,3 +1,5 @@
+import Link from '../components/Link';
+
 export default function AboutPage () {
   return (
     <>
@@ -12,7 +14,7 @@ export default function AboutPage () {
           publish my own library
         </p>
 
-        <a href="/">Go to home page</a>
+        <Link to="/">Go to home page</Link>
       </main>
     </>
   );

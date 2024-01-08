@@ -1,3 +1,5 @@
+import Link from '../components/Link';
+
 export default function HomePage () {
   return (
     <>
@@ -8,7 +10,7 @@ export default function HomePage () {
       <main>
         <p>A React library that enables <strong>client side routing</strong></p>
 
-        <a href="/about">Go to about page</a>
+        <Link to="/about">Go to about page</Link>
       </main>
     </>
   );
