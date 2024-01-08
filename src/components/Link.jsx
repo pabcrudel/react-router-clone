@@ -41,6 +41,9 @@ function navigationManager (event, target, to) {
 
     // Perform navigation
     navigate(to);
+
+    // Scroll to the top on each navigation
+    window.scrollTo(0, 0);
   }
 }
 
