@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Children } from 'react';
 import NotFoundPage from '../pages/NotFound';
 import { NAVIGATION_EVENT } from '../constants';
 import PropTypes from 'prop-types';
 import { match } from 'path-to-regexp';
 
-export default function Router ({ routes = [] }) {
+export default function Router ({ children }) {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
   useEffect(() => {
@@ -29,12 +29,19 @@ export default function Router ({ routes = [] }) {
     };
   }, []);
 
+  /** Iterates each children and, if it is a Route component, returns it's
+   * props.
+  */
+  const routesFromChildren = Children.map(children, ({ props, type }) => {
+    return type.name === 'Route' ? props : null;
+  });
+
   /** Object that stores all the parameters of a given route.
    * @type MatchResult<object>
    */
   let routeParams = {};
 
-  const Page = routes.find(
+  const Page = routesFromChildren.find(
     ({ path }) => {
       if (path === currentPath) return true;
 
@@ -69,10 +76,5 @@ export default function Router ({ routes = [] }) {
 }
 
 Router.propTypes = {
-  routes: PropTypes.arrayOf(PropTypes.shape(
-    {
-      path: PropTypes.string.isRequired,
-      Component: PropTypes.func.isRequired
-    }
-  ))
+  children: PropTypes.node.isRequired
 };
