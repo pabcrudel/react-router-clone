@@ -6,5 +6,5 @@ export default function Route ({ path, Component }) {
 
 Route.propTypes = {
   path: PropTypes.string.isRequired,
-  Component: PropTypes.func.isRequired
+  Component: PropTypes.elementType.isRequired
 };
