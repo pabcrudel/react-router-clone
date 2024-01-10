@@ -76,5 +76,5 @@ export default function Router ({ children }) {
 }
 
 Router.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node
 };
