@@ -41,7 +41,7 @@ export default function Router ({ children }) {
    */
   let routeParams = {};
 
-  const Page = routesFromChildren.find(
+  const Page = routesFromChildren?.find(
     ({ path }) => {
       if (path === currentPath) return true;
 
