@@ -1,6 +1,6 @@
 import { useEffect, useState, Children } from 'react';
 import NotFoundPage from '../pages/NotFound';
-import { NAVIGATION_EVENT } from '../constants';
+import { NAVIGATION_EVENT } from '../utils/constants';
 import PropTypes from 'prop-types';
 import { match } from 'path-to-regexp';
 import { getCurrentLocation } from '../utils/getCurrentLocation';
