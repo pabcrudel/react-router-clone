@@ -3,13 +3,14 @@ import NotFoundPage from '../pages/NotFound';
 import { NAVIGATION_EVENT } from '../constants';
 import PropTypes from 'prop-types';
 import { match } from 'path-to-regexp';
+import { getCurrentLocation } from '../utils/getCurrentLocation';
 
 export default function Router ({ children }) {
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const [currentPath, setCurrentPath] = useState(getCurrentLocation());
 
   useEffect(() => {
     function changeLocation () {
-      const pathName = window.location.pathname;
+      const pathName = getCurrentLocation();
 
       setCurrentPath(prevState => {
         if (prevState !== pathName) return pathName;
