@@ -1,9 +1,9 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
-import { getCurrentLocation } from '../utils/getCurrentLocation';
-import Router from '../components/Router';
-import Route from '../components/Route';
-import Link from '../components/Link';
+import { getCurrentLocation } from '../src/utils/getCurrentLocation';
+import Router from '../src/components/Router';
+import Route from '../src/components/Route';
+import Link from '../src/components/Link';
 
 // Create a mock to specify what should render a function to perform a test.
 // Then, it will be used like this:
@@ -11,7 +11,7 @@ import Link from '../components/Link';
 // So I could test if the current path is `/about`, the router is rendering
 // the about page.
 
-vi.mock('../utils/getCurrentLocation.js', () => ({
+vi.mock('../src/utils/getCurrentLocation.js', () => ({
   getCurrentLocation: vi.fn()
 }));
 
