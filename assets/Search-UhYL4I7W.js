@@ -1,0 +1,1 @@
+import{j as e,L as s,P as a}from"./index-6GJHx-lb.js";function i({routeParams:r}){return e.jsxs(e.Fragment,{children:[e.jsx("header",{children:e.jsx("h1",{children:"Search"})}),e.jsxs("main",{children:[e.jsxs("p",{children:["Your search is ",r.query]}),e.jsx(s,{to:"/",children:"Go to home page"})]})]})}i.propTypes={routeParams:a.object.isRequired};export{i as default};

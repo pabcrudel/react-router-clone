@@ -1,0 +1,1 @@
+import{j as e,L as r}from"./index-6GJHx-lb.js";function n(){return e.jsxs(e.Fragment,{children:[e.jsx("header",{children:e.jsx("h1",{children:"React Router Clone"})}),e.jsxs("main",{children:[e.jsxs("p",{children:["A React library that enables ",e.jsx("strong",{children:"client side routing"})]}),e.jsx(r,{to:"/about",children:"Go to about page"})]})]})}export{n as default};
