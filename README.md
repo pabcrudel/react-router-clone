@@ -105,3 +105,47 @@ function navigate (href) {
   window.dispatchEvent(new Event('pushState'));
 }
 ```
+
+## How to deploy a JS library on NPM
+
+In order to deploy a JS library on NPM it has to be tested and builded. The
+testing step is made by Vitest. To build te library there is a library that
+allows you to do so: [swc](https://swc.rs/).
+
+```bash
+npm i -D @swc/cli @swc/core
+```
+
+It needs some configuration on a file called [.swcrc](.swcrc).
+
+```json
+{
+  "$schema": "https://json.schemastore.org/swcrc",
+  "jsc": {
+    "parser": {
+      "syntax": "ecmascript",
+      "jsx": true, // Allow React files
+      "dynamicImport": false,
+      "privateMethod": false,
+      "functionBind": false,
+      "exportDefaultFrom": false,
+      "exportNamespaceFrom": false,
+      "decorators": false,
+      "decoratorsBeforeExport": false,
+      "topLevelAwait": false,
+      "importMeta": false
+    },
+    "transform": { // Set runtime to "automatic" for externalized JSX handling
+      "react": {
+        "runtime": "automatic"
+      }
+    },
+    "target": "es2020", // ECMAScript version of the built code
+    "loose": true, // Enable efficient code generation
+    "externalHelpers": false,
+    // Requires v1.2.50 or upper and requires target to be es2016 or upper.
+    "keepClassNames": false
+  },
+  "minify": true // Enable minification
+}
+```
